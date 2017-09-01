@@ -1,14 +1,89 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
- <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/> 
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 <title>Cadastro de Jogos</title>
+<style>
+body {
+	background-color: black;
+	background-image: url("https://images7.alphacoders.com/327/327601.jpg");
+	text-align: center;
+}
+
+#error, #logout {
+	margin-top: 10px;
+	color: red;
+}
+
+#cadastroSection {
+	margin: auto;
+	margin-top: 20%;
+	width: 10%;
+	padding: 2%;
+	border: 1px solid silver;
+	border-radius: 4px;
+	box-shadow: 1px 1px 1px;
+	background: linear-gradient(to bottom, gray, black);
+	background-image: url("https://images7.alphacoders.com/327/327601.jpg");
+	background-position: 50% 47%;
+	text-align: left;
+	color: cyan;
+}
+
+.botoes {
+	background-color: black;
+	color: cyan;
+	font-weight: bold;
+	width: 100%;
+	height: 150%;
+	margin: 0px;
+	#
+	signin
+	{
+}
+
+#imgEsq {
+	align: left;
+	height: 100%;
+	width: 100%;
+}
+
+input {
+	margin: 5px;
+}
+</style>
 </head>
 <body>
-	<form action="#" th:action="@{/jogo/cadastro}" th:object="${jogoNovo}" method="post">
-    	<p>Nome: <input type="text" th:field="*{nome}" /></p>
-        <p>Preço: <input type="text" th:field="*{preco}" /></p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-    </form>
+	<!-- <form action="#" th:action="@{/jogo/cadastro}" th:object="${jogoNovo}"
+		method="post">
+		<p>
+			Nome: <input type="text" th:field="*{nome}" />
+		</p>
+		<p>
+			Preço: <input type="text" th:field="*{preco}" />
+		</p>
+		<p>
+			<input type="submit" value="Submit" /> <input type="reset"
+				value="Reset" />
+		</p>
+	</form> -->
+	<div id="cadastroSection">
+		<form action="#" th:action="@{/jogo/cadastro}" th:object="${jogoNovo}"
+			method="post">
+			<label> Nome: <input type="text" th:field="*{nome}" />
+			</label><br />
+			<label> Preco: <input type="number" th:field="*{preco}" />
+			</label><br />
+			<br />
+			<p>
+				<input class="botoes" type="submit" value="Submit" /> 
+				<br />
+				<br />
+				<input class="botoes" type="reset" value="Reset" />
+			</p>
+			<!-- <input class="botoes" id="signin" type="submit" value="Sign In" /><br />
+			<br /> <input class="botoes" id="signup" type="submit" value="Sign Up" /> -->
+		</form>
+	</div>
 </body>
 </html>

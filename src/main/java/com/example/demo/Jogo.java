@@ -8,17 +8,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.sun.istack.internal.NotNull;
+
 @Entity
 @Table(name="Jogos")
 public class Jogo {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@NotNull
 	private int codigoJogo;
+	@NotNull
 	private String nome;
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
-
+	@NotNull
 	private double preco;
 	/*int quantidadeProduto;*/
 	static ListaJogos listajogos = new ListaJogos();
