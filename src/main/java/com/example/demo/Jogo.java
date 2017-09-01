@@ -15,6 +15,10 @@ public class Jogo {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int codigoJogo;
 	private String nome;
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+
 	private double preco;
 	/*int quantidadeProduto;*/
 	static ListaJogos listajogos = new ListaJogos();
@@ -30,10 +34,14 @@ public class Jogo {
 		/*this.quantidadeProduto = quantidadeProduto;*/
 	}
 
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 	public static Jogo addJogo(){
 		
 		double tempPre;
-		int tempCod;
+		/*int tempCod;*/
 		/*int tempQntd;*/
 		String tempNome;
 		
