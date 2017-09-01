@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
 import com.sun.istack.internal.NotNull;
 
@@ -18,11 +20,13 @@ public class Jogo {
 	@NotNull
 	private int codigoJogo;
 	@NotNull
+	@Size(min=2, max = 100)
 	private String nome;
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
 	@NotNull
+	@Min(0)
 	private double preco;
 	/*int quantidadeProduto;*/
 	static ListaJogos listajogos = new ListaJogos();
