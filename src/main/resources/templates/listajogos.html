@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+<style>
+
+.header1 {
+	background-color: grey;
+}
+
+.th1 {
+	/* border-right: 2px dashed #bad5d8; */
+	padding: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+	width: 25%;
+}
+
+.tabela1 {
+	width: 100%
+}
+
+.header2 {
+	background-color: #EEF;
+	margin-bottom:;
+}
+
+.tabela2 {
+	border: 1px solid grey;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: grey;
+	width: 40%;
+	margin-top: 1%;
+	text-align: center;
+}
+
+.th2 {
+	background-color: grey;
+	color: white;
+	font-weight: bold;
+	font-size: 150%;
+}
+
+td {
+	border: 1px solid grey;
+	background-color: white;
+	font-size: 125%;
+}
+
+body {
+	background-color: black;
+	background-image: url("https://images7.alphacoders.com/327/327601.jpg");
+}
+
+.botoes {
+	background-color: black;
+	color: cyan;
+	font-weight: bold;
+	width: 100%;
+	height: 150%;
+	margin: 0px;
+}
+</style>
+
+<title>Lista de Jogos</title>
+</head>
+<body>
+	<header class="header1">
+		<table class="tabela1" id="tabela1" cellspacing="2">
+		
+			<th class="th1" margin="0%">
+				<form action="/listajogos">
+
+					<input class="botoes" type="button" value="Lista de Jogos" />
+				</form>
+			</th>
+			
+			<th clas="th1" margin="0%">
+				<form action='/home'>
+
+					<input class="botoes" type="submit" value="Home" />
+				</form>
+			</th>
+			
+			<th class="th1" margin="0%">
+				<form th:action="@{/logout}" method="post">
+					<input class="botoes" type="submit" value="Sign Out" />
+				</form>
+			</th>
+			
+			<th class="th1" margin="0%">
+				<span th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</span>
+			</th>
+		</table>
+
+	</header>
+	<!-- <header>
+        <p th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</p>
+
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+        </header> -->
+	<table class="tabela2" cellspacing="1" id="prodTable">
+		<thead class="header2">
+			<tr id="headerT">
+				<th class="th2" width="15%" th:text="Codigozin">id</th>
+				<th class="th2" th:text="Nomezin">Nome</th>
+				<th class="th2" width="10%" th:text="Precin">Preco</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="jog: ${Jogos}">
+				<td th:text="${jog.codigoJogo}"></td>
+				<td th:text="${jog.nome}"></td>
+				<td th:text="${#numbers.formatDecimal(jog.preco, 1, 2)}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

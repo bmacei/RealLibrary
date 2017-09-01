@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Spring Security Example </title>
+       	<style>
+       		body{
+       			background-color: black;
+       			background-image: url("https://images7.alphacoders.com/327/327601.jpg");
+       			text-align: center;
+       		}
+       		#error,#logout{
+       			margin-top: 10px;
+       			color: red;
+       		}
+       		#loginSection{
+       			margin: auto;
+       			margin-top: 20%;
+       			width: 10%;
+				padding: 2%;
+ 				border:1px solid silver;
+ 				border-radius: 4px;
+ 				box-shadow: 1px 1px 1px;
+ 				background: linear-gradient(to bottom, gray, black);
+ 				background-image: url("https://images7.alphacoders.com/327/327601.jpg");
+ 				background-position: 50% 45%;
+ 				text-align: left;
+ 				color: cyan;
+ 				
+       		}
+       		
+       		.botoes{
+    		background-color: black;
+    		color: cyan;
+    		font-weight: bold;
+    		width: 100%;
+    		height: 150%;
+    		margin: 0px;
+       		#signin{
+       	
+
+       		}
+       		
+       		#imgEsq{
+       			align: left;
+       			height: 100%;
+       			width: 100%;
+       		
+       		}
+       		input{
+       			margin: 5px;
+       		}
+       	</style>
+    </head>
+    <body>
+    	
+        <header>
+        
+		<!-- <table cellspacing="2">
+			<th margin="0%">
+				<form action='/'>
+            	
+            	<input class="botoes" type="submit" value="Home"/>
+       	 		</form>
+			</th>
+			<th>
+				<a href="/">
+				
+				</a>
+			</th>
+			<th id="areaLogin">
+				<form th:action="@{/login}" method="post">
+            	<label> Username : <input type="text" name="username"/> 
+            	 Password: <input type="password" name="password"/> </label>
+            	<input id="botao" type="submit" value="Sign In"/>
+       	 		</form>
+			</th>
+		</table> -->
+
+	</header>
+	
+	<!-- <img id="imgEsq" src="https://images7.alphacoders.com/327/327601.jpg"/> -->
+        <div id="loginSection">
+        <form th:action="@{/login}" method="post">
+            <label> Username : <input type="text" name="username"/> </label><br/>
+            <label> Password: <input type="password" name="password"/> </label><br/><br/>
+            <input class="botoes" id="signin" type="submit" value="Sign In"/><br/><br/>
+            <input class="botoes" id="signup" type="submit" value="Sign Up"/>
+        </form>
+        </div>
+        <div id="error" th:if="${param.error}">
+            Invalid username and/or password!
+        </div>
+        <div id="logout" th:if="${param.logout}">
+            You have been logged out.
+        </div>
+    </body>
+</html> 
