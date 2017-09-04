@@ -73,9 +73,9 @@ body {
 		<table class="tabela1" id="tabela1" cellspacing="2">
 		
 			<th class="th1" margin="0%">
-				<form action="/listajogos">
+				<form action='/listajogos'>
 
-					<input class="botoes" type="button" value="Lista de Jogos" />
+					<input class="botoes" type="submit" value="Lista de Jogos" />
 				</form>
 			</th>
 			
@@ -112,20 +112,23 @@ body {
 				<th class="th2" th:text="Nomezin">Nome</th>
 				<th class="th2" width="10%" th:text="Precin">Preco</th>
 			</tr>
-		</thead>
+		<!-- </thead>
 		<tbody>
-			<tr th:each="jog: ${Jogos}">
+			<tr th:each="jog: ${Jogos}"th:if="${jog.codigoJogo = [[${#httpServletRequest.remoteUser}]].jogos}" />
 				<td th:text="${jog.codigoJogo}"></td>
 				<td th:text="${jog.nome}"></td>
 				<td th:text="${#numbers.formatDecimal(jog.preco, 1, 2)}"></td>
 			</tr>
+		</tbody> -->
+		</thead>
+		<tbody>
+			<tr th:each="jog:${Biblioteca}">
+				
+				<td th:text="${jog.jogo}"></td>
+				<!-- <td th:text="${jog.codigoJogo"></td> 
+				<td th:text="${jog.id}"></td>
+			 --></tr>
 		</tbody>
 	</table>
-	<!-- <div id="addtolib">
-        <form th:action="/listajogos}" method="post">
-            <label> Username : <input type="text" name="username"/> </label><br/>
-            <input class="botoes" id="ADD" type="submit" value="ADDJogo"/>
-        </form>
-        </div> -->
 </body>
 </html>

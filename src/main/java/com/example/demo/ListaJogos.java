@@ -20,7 +20,7 @@ public class ListaJogos {
 			System.out.println("Sucesso");
 
 		/*} else {
-			System.out.println("ERRO: 6848XC48458WES.1/ http://bit.ly/2uP5gdV /(ノಠ益ಠ)ノ彡┻━┻");// produto nao// adicionado(quantd// negativa)			
+			System.out.println("ERRO: 6848XC48458WES.1/ http://bit.ly/2uP5gdV /(ãƒŽà² ç›Šà² )ãƒŽå½¡â”»â”�â”»");// produto nao// adicionado(quantd// negativa)			
 		}*/
 
 	}
@@ -91,13 +91,13 @@ public class ListaJogos {
 
 				} else if (quantidadeProduto > p.getQuantidadeProduto()) {
 
-					System.out.println("ERRO codigo: 6848XC48458WES.69  ﴾͡๏̯͡๏﴿ O'RLY?");// venda maior que estoque
+					System.out.println("ERRO codigo: 6848XC48458WES.69  ï´¾Í¡à¹�Ì¯Í¡à¹�ï´¿ O'RLY?");// venda maior que estoque
 					System.exit(0);
 					break;
 				}
 			} else if (estoqueProdutos.size() == estoqueProdutos.indexOf(p) + 1) {
 
-				System.out.println("ERRO codigo: 6848XC48458WES.404  ლ,ᔑ•ﺪ͟͠•ᔐ.ლ");// produto nao encontrado
+				System.out.println("ERRO codigo: 6848XC48458WES.404  áƒš,á”‘â€¢ïºªÍŸÍ â€¢á”�.áƒš");// produto nao encontrado
 				break;
 
 			}

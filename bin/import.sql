@@ -8,3 +8,6 @@ insert into Jogos (nome,preco) values('Path of Exile',0.00);
 insert into Jogos (nome,preco) values('GTA V',99.99);
 insert into Jogos (nome,preco) values('Dont Starve Together',27.99);
 insert into Jogos (nome,preco) values('Arma 3',119.99);
+insert into Biblioteca (jogo) values(1);
+insert into Biblioteca (jogo) values(2);
+insert into Biblioteca (jogo) values(3);

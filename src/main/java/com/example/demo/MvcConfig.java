@@ -14,6 +14,9 @@ package com.example.demo;
          //registry.addViewController("/hello").setViewName("hello");
          registry.addViewController("/login").setViewName("login");
          registry.addViewController("/addjogo").setViewName("cadastrajogos");
+         registry.addViewController("/profile").setViewName("profile");
+         registry.addViewController("/jogo/cadastro").setViewName("cadastrajogos");
+         
      }
  
 }
