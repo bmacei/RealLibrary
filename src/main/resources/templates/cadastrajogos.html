@@ -68,8 +68,8 @@ input {
 		</p>
 	</form> -->
 	<div id="cadastroSection">
-		<form action="#" th:action="@{/jogo/cadastro}" th:object="${jogoNovo}"
-			method="post">
+		<form action="#" th:action="@{/jogo/cadastro}" th:object="${jogoNovo}" method="post">
+		
 			<label> Nome: <input type="text" th:field="*{nome}" />
 			</label><br />
 			<label> Preco: <input type="number" th:field="*{preco}" />

@@ -13,21 +13,22 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.thymeleaf.expression.Ids;
 
 @Controller
 
 public class BibliotecaController {
 	
-	private BibliotecaRepositorioSpring bb;
+	private BibliotecaRepositorioSpring br;
 	
 	@Autowired
-	public BibliotecaController(BibliotecaRepositorioSpring bb/*, VendaRepositorioSpring vr*/) {
-		this.bb = bb;
+	public BibliotecaController(BibliotecaRepositorioSpring bc/*, VendaRepositorioSpring vr*/) {
+		this.br = bc;
 	}
 
 	@RequestMapping("/profile")
 	public String consultarBib(Model model) {
-		model.addAttribute("Biblioteca", bb.findAll());
+		model.addAttribute("Biblioteca", br.findAll());
 		return "profile";
 	}
 	

@@ -27,8 +27,8 @@ public class Jogo {
 	private double preco;
 	/* int quantidadeProduto; */
 	/* ListaJogos listajogos = new ListaJogos(); */
-	@ManyToOne
-	Usuarios user = new Usuarios();
+	/*@ManyToOne
+	Usuarios user = new Usuarios();*/
 
 	public Jogo() {
 
