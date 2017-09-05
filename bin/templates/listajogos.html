@@ -45,6 +45,22 @@
 	font-size: 150%;
 }
 
+#bibliotecaSection {
+	margin: auto;
+	margin-top: 20%;
+	width: 10%;
+	padding: 2%;
+	border: 1px solid silver;
+	border-radius: 4px;
+	box-shadow: 1px 1px 1px;
+	background: linear-gradient(to bottom, gray, black);
+	background-image: url("https://images7.alphacoders.com/327/327601.jpg");
+	background-position: 50% 47%;
+	text-align: left;
+	color: cyan;
+}
+	
+
 td {
 	border: 1px solid grey;
 	background-color: white;
@@ -127,5 +143,16 @@ body {
             <input class="botoes" id="ADD" type="submit" value="ADDJogo"/>
         </form>
         </div> -->
+        <div id="bibliotecaSection">
+		<form action="#" th:action="@{/profile}" th:object="${bib}" method="post">
+			<label> Codigo: <input type="number" th:field="*{jogo}" />
+			</label><br />
+			<br />
+			<p>
+				<input class="botoes" type="submit" value="Submit" /> 
+				<br />
+			</p>
+		</form>
+	</div>
 </body>
 </html>

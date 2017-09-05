@@ -45,6 +45,8 @@
 	font-size: 150%;
 }
 
+
+
 td {
 	border: 1px solid grey;
 	background-color: white;
@@ -112,23 +114,19 @@ body {
 				<th class="th2" th:text="Nomezin">Nome</th>
 				<th class="th2" width="10%" th:text="Precin">Preco</th>
 			</tr>
-		<!-- </thead>
+		</thead>	
 		<tbody>
-			<tr th:each="jog: ${Jogos}"th:if="${jog.codigoJogo = [[${#httpServletRequest.remoteUser}]].jogos}" />
+			<tr th:each="jog: ${Jogo}"> 
 				<td th:text="${jog.codigoJogo}"></td>
 				<td th:text="${jog.nome}"></td>
 				<td th:text="${#numbers.formatDecimal(jog.preco, 1, 2)}"></td>
 			</tr>
-		</tbody> -->
-		</thead>
-		<tbody>
-			<tr th:each="jog:${Biblioteca}">
-				
-				<td th:text="${jog.jogo}"></td>
-				<!-- <td th:text="${jog.codigoJogo"></td> 
-				<td th:text="${jog.id}"></td>
-			 --></tr>
+			
+		
+		<!-- </tbody>
+		<tbody> -->
 		</tbody>
 	</table>
+	
 </body>
 </html>

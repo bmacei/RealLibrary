@@ -31,6 +31,7 @@ public class ListaJogosController {
 	@RequestMapping("/listajogos")
 	public String consultarJogos(Model model) {
 		model.addAttribute("Jogos", jg.findAll());
+		model.addAttribute("bib", new Biblioteca());
 		return "listajogos";
 	}
 	
