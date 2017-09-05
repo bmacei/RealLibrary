@@ -23,9 +23,8 @@ public class ListaJogosController {
 	private JogoRepositorioSpring jg;
 	
 	@Autowired
-	public ListaJogosController(JogoRepositorioSpring jg/*, VendaRepositorioSpring vr*/) {
+	public ListaJogosController(JogoRepositorioSpring jg) {
 		this.jg = jg;
-		/*this.vr = vr;*/
 	}
 
 	@RequestMapping("/listajogos")
@@ -38,7 +37,7 @@ public class ListaJogosController {
 	@GetMapping("/jogo/cadastro")
     public String produtoForm(Model model) {
         model.addAttribute("jogoNovo", new Jogo());
-        return /*"cadastraprodutos"*/"cadastrajogos";
+        return "cadastrajogos";
     }
 	
 	@PostMapping("/jogo/cadastro")
@@ -47,11 +46,5 @@ public class ListaJogosController {
 		return "redirect:/listajogos";
 	}
 	
-	/*@PostMapping("/listajogos")
-	public String produtoCadastro(@ModelAttribute Jogo jogoNovo, Model model) {
-		Jogo novoJg = jg.save(jogoNovo);
-		return "redirect:/profile";
-	}*/
-	
-	
+
 }

@@ -38,7 +38,7 @@ public class BibliotecaController {
 
 	@RequestMapping("/profile")
 	public String consultarBib(Model model) {
-//		model.addAttribute("Biblioteca", br.findAll());
+
 		
 		Iterable<Biblioteca> bl = br.findAll();
 		Iterable<Jogo>       jl = jg.findAll();
@@ -59,11 +59,6 @@ public class BibliotecaController {
 		return "profile";
 	}
 	
-	/*@GetMapping("/profile")
-    public String bibliotecaForm(Model model) {
-        model.addAttribute("bib", new Biblioteca());
-        return "cadastraprodutos""profile";
-    }*/
 	
 	@PostMapping("/profile")
 	public String bibliotecaCadastro(@ModelAttribute Biblioteca bib, Model model) {

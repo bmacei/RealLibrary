@@ -8,15 +8,16 @@
 <style>
 
 .header1 {
-	background-color: grey;
+	background-color: black;
+	border: 1px solid cyan;
 }
 
 .th1 {
-	/* border-right: 2px dashed #bad5d8; */
 	padding: 5px;
 	padding-right: 10px;
 	padding-left: 10px;
 	width: 25%;
+	color: cyan;
 }
 
 .tabela1 {
@@ -29,25 +30,26 @@
 }
 
 .tabela2 {
-	border: 1px solid grey;
+	border: 2px solid cyan;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: grey;
+	background-color: solid grey;
 	width: 40%;
 	margin-top: 1%;
 	text-align: center;
+	color: black;
 }
 
 .th2 {
-	background-color: grey;
-	color: white;
+	background-color: black;
+	color: cyan;
 	font-weight: bold;
 	font-size: 150%;
 }
 
 #bibliotecaSection {
-	margin: auto;
-	margin-top: 20%;
+	margin-left: 7%;
+	margin-top: 18%;
 	width: 10%;
 	padding: 2%;
 	border: 1px solid silver;
@@ -62,8 +64,8 @@
 	
 
 td {
-	border: 1px solid grey;
-	background-color: white;
+	border: 1px solid cyan;
+	background-color: grey;
 	font-size: 125%;
 }
 
@@ -79,6 +81,7 @@ body {
 	width: 100%;
 	height: 150%;
 	margin: 0px;
+	border: cyan;
 }
 </style>
 
@@ -87,6 +90,13 @@ body {
 <body>
 	<header class="header1">
 		<table class="tabela1" id="tabela1" cellspacing="2">
+
+			<th clas="th1" margin="0%">
+				<form action='/home'>
+
+					<input class="botoes" type="submit" value="Home" />
+				</form>
+			</th>
 		
 			<th class="th1" margin="0%">
 				<form action="/listajogos">
@@ -95,10 +105,9 @@ body {
 				</form>
 			</th>
 			
-			<th clas="th1" margin="0%">
-				<form action='/home'>
-
-					<input class="botoes" type="submit" value="Home" />
+			<th class="th1" margin="0%">
+				<form action='/profile'>
+					<input class="botoes" type="submit" value="Profile" />
 				</form>
 			</th>
 			
@@ -107,26 +116,15 @@ body {
 					<input class="botoes" type="submit" value="Sign Out" />
 				</form>
 			</th>
-			
-			<th class="th1" margin="0%">
-				<span th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</span>
-			</th>
 		</table>
 
 	</header>
-	<!-- <header>
-        <p th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</p>
-
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form>
-        </header> -->
 	<table class="tabela2" cellspacing="1" id="prodTable">
 		<thead class="header2">
 			<tr id="headerT">
-				<th class="th2" width="15%" th:text="Codigozin">id</th>
-				<th class="th2" th:text="Nomezin">Nome</th>
-				<th class="th2" width="10%" th:text="Precin">Preco</th>
+				<th class="th2" width="15%" th:text="Codigo">id</th>
+				<th class="th2" th:text="Nome">Nome</th>
+				<th class="th2" width="10%" th:text="Preço">Preco</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -137,19 +135,19 @@ body {
 			</tr>
 		</tbody>
 	</table>
-	<!-- <div id="addtolib">
-        <form th:action="/listajogos}" method="post">
-            <label> Username : <input type="text" name="username"/> </label><br/>
-            <input class="botoes" id="ADD" type="submit" value="ADDJogo"/>
-        </form>
-        </div> -->
         <div id="bibliotecaSection">
-		<form action="#" th:action="@{/profile}" th:object="${bib}" method="post">
+        	<form action='/profile'>
+			<p>
+				<input class="botoes" type="submit" value="Biblioteca" /> 
+				<br />
+			</p>
+			</form>
+			<form action="#" th:action="@{/profile}" th:object="${bib}" method="post">
 			<label> Codigo: <input type="number" th:field="*{jogo}" />
 			</label><br />
 			<br />
 			<p>
-				<input class="botoes" type="submit" value="Submit" /> 
+				<input class="botoes" type="submit" value="Adicionar" /> 
 				<br />
 			</p>
 		</form>

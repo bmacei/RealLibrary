@@ -25,20 +25,14 @@ public class Jogo {
 	@NotNull
 	@Min(0)
 	private double preco;
-	/* int quantidadeProduto; */
-	/* ListaJogos listajogos = new ListaJogos(); */
-	/*@ManyToOne
-	Usuarios user = new Usuarios();*/
 
 	public Jogo() {
 
 	}
 
-	public Jogo(String nomeJogo, double precoJogo/* , int quantidadeProduto */) {
-		/* this.codigoJogo = -1; */
+	public Jogo(String nomeJogo, double precoJogo) {
 		this.nome = nomeJogo;
 		this.preco = precoJogo;
-		/* this.quantidadeProduto = quantidadeProduto; */
 	}
 
 	public void setNome(String nome) {
@@ -53,11 +47,6 @@ public class Jogo {
 		return codigoJogo;
 	}
 
-	/*
-	 * public void setQuantidadeProduto(int quantidadeProduto) {
-	 * this.quantidadeProduto = quantidadeProduto;
-	 */
-	/* } */
 	public String getNome() {
 		return nome;
 	}
@@ -66,96 +55,4 @@ public class Jogo {
 		return preco;
 	}
 
-	/*
-	 * public static Jogo addJogo(){
-	 * 
-	 * double tempPre; int tempCod; int tempQntd; String tempNome;
-	 * 
-	 * @SuppressWarnings("resource") Scanner teclado = new Scanner(System.in);
-	 * 
-	 * System.out.println("Informe o codigo do produto para cadastro.");
-	 * 
-	 * tempCod = teclado.nextInt(); Produto.validaCodigo(tempCod);
-	 * 
-	 * 
-	 * //this.codigoProduto = Integer.parseInt(tempCod);
-	 * 
-	 * System.out.println("Informe o nome do produto para cadastro.");
-	 * 
-	 * tempNome = teclado.next();
-	 * 
-	 * System.out.println("Informe o valor do produto para cadastro.");
-	 * 
-	 * tempPre = teclado.nextDouble(); //this.valorProduto =
-	 * Double.parseDouble(tempVal); //teclado.close();
-	 * 
-	 * System.out.println("Informe a quantidade em estoque.");
-	 * 
-	 * tempQntd = teclado.nextInt(); //this.quantidadeProduto =
-	 * Integer.parseInt(tempQntd);
-	 * 
-	 * Jogo p = new Jogo(tempNome,tempPre,tempQntd);
-	 * 
-	 * 
-	 * return p;
-	 * 
-	 * 
-	 * }
-	 */
-	/*
-	 * public static void validaCodigo(int tempCod) { int x=0; while(x==1) {
-	 * 
-	 * 
-	 * for(Produto p : estoque.estoqueProdutos) {
-	 * 
-	 * if(tempCod == p.getCodigoProduto()) {
-	 * 
-	 * System.out.println("VAI SE FODER SEU ANIMAL BURRO DA PORRA!"); tempCod =
-	 * tempCod + 1;
-	 * 
-	 * }
-	 * 
-	 * }
-	 * 
-	 * 
-	 * }
-	 */
-
-	/*
-	 * int n = tempCod; int lenght=(int)(Math.log10(n)+1); n = 6 - lenght; if(n<0) {
-	 * 
-	 * System.out.
-	 * printf("ERRO codigo: 6848XC48458WES.666  ̿ ̿ ̿'̿'\\̵͇̿̿\\з=(•_•)=ε/̵͇̿̿/'̿'̿ ̿"
-	 * );//codigo inválido
-	 * 
-	 * } else {
-	 * 
-	 * for (int i = n ; i < 6 ; i ++ ) {
-	 * 
-	 * System.out.print("0");
-	 * 
-	 * }
-	 * 
-	 * System.out.println(tempCod);
-	 * 
-	 * }
-	 */
-
-	// }
-
-	/*
-	 * public int getQuantidadeProduto() { return quantidadeProduto; }
-	 */
-
-	/*
-	 * public void setCodigoJogo(int codigoJogo) { this.codigoJogo = codigoJogo;
-	 */
-	/* } */
-
-	/*
-	 * public void checkJogo(int cod) {
-	 * 
-	 * System.out.println("Nome:"+ nome); System.out.println("Valor:"+ preco);
-	 * System.out.println("Quantidade em estoque:"+ quantidadeProduto); }
-	 */
 }
