@@ -7,6 +7,21 @@
 <head>
 <style>
 
+#bibliotecaSection {
+	margin-left: 5%;
+	margin-top: 15%;
+	width: 10%;
+	height: 100%;
+	padding: 2%;
+	border: 1px solid silver;
+	border-radius: 4px;
+	box-shadow: 1px 1px 1px;
+	background: linear-gradient(to bottom, gray, black);
+	background-image: url("https://specials-images.forbesimg.com/imageserve/55eefe0de4b0ffa7afe47020/400x400.jpg");
+	background-position: 50% 65%; 
+	text-align: left;
+	color: cyan;
+}
 .header1 {
 	background-color: black;
 	border: 1px solid cyan;
@@ -122,6 +137,24 @@ body {
 			</tr>
 		</tbody>
 	</table>
-	
+	<div id="bibliotecaSection">
+	<form action="#" th:action="@{/samegame}"  method="get">
+			
+			<p>Jogos: 
+		        			<select name="option" >
+		        		  		<option value="2">user2</option>
+		        		  		<option value="3">user3</option>
+		        		  		<option value="4">user4</option>
+		        		  		<option value="5">user5</option>
+		        		  		<option value="6">user6</option>
+		        		  		<option value="7">user7</option>
+		        		  		<option value="8">user8</option>
+		        		  		<option value="9">user9</option>
+		        		 	</select>
+		        		 	<input class="botoes" type="submit" value="Conferir" />
+		    </p>
+			
+	</form>
+	</div>
 </body>
 </html>
